@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Hello!</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+        <link rel="stylesheet" href="~/css/style.css"/>
+        <style>
+            .container{
+                width: 600px;
+                margin: 0 auto;
+            }
+            span{
+                margin-left: 200px !important;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h3>Here are the awesome quotes!</h3>
+            @foreach(var item in @ViewBag.allQuotes) 
+            {
+                <p>@item["message"]</p>
+                <p><span>-@item["name"] at @item["created_at"].ToString("h:mm tt MMMM dd yyyy")</span></p>
+            }
+        </div>
+    </body>
+</html>
+
